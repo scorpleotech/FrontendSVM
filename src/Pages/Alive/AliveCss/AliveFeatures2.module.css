@@ -2,8 +2,8 @@
 
 .section5MainContainer {
     margin: 3% auto 5% auto !important;
-    padding: 0 10%;
-    /* Increased padding even more */
+    padding: 0 2% !important;
+    /* Reduced side padding */
 }
 
 .Sectio4Header {
@@ -59,10 +59,11 @@
 
 .Section5SubHeader1 {
     font-size: 17px !important;
-    margin-top: 5px !important;
+    margin-top: 0 !important;
+    /* Removed extra top margin */
     color: #666;
-    margin-bottom: 0px !important;
-    /* Removed bottom margin completely */
+    margin-bottom: 5px !important;
+    /* Reduced space before text */
 }
 
 .Section5Text {
@@ -71,6 +72,8 @@
     text-align: left;
     color: #666;
     margin-bottom: 15px;
+    margin-top: 5px !important;
+    /* Reduced space from SubHeader1 */
 }
 
 .section5SpecImage {
@@ -84,7 +87,7 @@
 
 @media screen and (max-width: 1680px) {
     .section5MainContainer {
-        padding: 0 12%;
+        padding: 0 4% !important;
     }
 
     .section5MainHeader {
@@ -93,16 +96,18 @@
 
     .Section5Text {
         font-size: 13px !important;
+        margin-top: 5px !important;
+        /* Keep spacing consistent */
     }
 }
 
 @media screen and (max-width: 1440px) {
     .section5MainContainer {
-        padding: 0 10%;
+        padding: 0 3% !important;
     }
 
     .section5MainHeader {
-        height: 70px !important;
+        height: 80px !important;
     }
 
     .Sectio4Header {
@@ -123,39 +128,38 @@
 
     .Section5SubHeader1 {
         font-size: 15px !important;
-        margin-bottom: 0px !important;
-        /* No bottom margin */
+        margin-bottom: 5px !important;
     }
 
     .Section5Text {
         font-size: 12px !important;
+        margin-top: 5px !important;
     }
 }
 
 @media screen and (max-width: 1100px) {
     .section5MainContainer {
-        padding: 0 6%;
+        padding: 0 2% !important;
     }
 
     .Sectio4HeaderText {
         font-size: 30px !important;
         line-height: 40px !important;
     }
+        .section5MainHeader {
+            height: 80px !important;
+        }
 
     .Section5Text {
         font-size: 11px !important;
         line-height: 25px !important;
-    }
-
-    .Section5SubHeader1 {
-        margin-bottom: 0px !important;
-        /* No bottom margin */
+        margin-top: 5px !important;
     }
 }
 
 @media screen and (max-width: 850px) {
     .section5MainContainer {
-        padding: 0 4%;
+        padding: 0 2% !important;
     }
 
     .section5MainHeader {
@@ -176,15 +180,14 @@
         width: 100%;
     }
 
-    .Section5SubHeader1 {
-        margin-bottom: 0px !important;
-        /* No bottom margin */
+    .Section5Text {
+        margin-top: 5px !important;
     }
 }
 
 @media screen and (max-width: 500px) {
     .section5MainContainer {
-        padding: 0 2%;
+        padding: 0 1% !important;
     }
 
     .section5RightContainer {
@@ -204,7 +207,8 @@
         text-align: justify;
         color: #666;
         width: 100% !important;
-        margin-bottom: 15px !important;
+        margin-bottom: 20px !important;
+        margin-top: 5px !important;
     }
 
     .Section5SubHeader {
@@ -213,7 +217,6 @@
     }
 
     .Section5SubHeader1 {
-        margin-bottom: 3px;
-        /* Consistent reduced spacing */
+        margin-bottom: 5px !important;
     }
 }

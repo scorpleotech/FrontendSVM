@@ -21,7 +21,7 @@ const Section2 = () => {
                 <span
                   className={`${classes.section2headerText2} ${classes.SvmSecondHeading}`}
                 >
-                  SVM
+                  SRIVARU
                 </span>{" "}
                 is dedicated to designing and manufacturing premium electric
                 motorbikes in India. We revolutionize the two-wheeler vehicles
