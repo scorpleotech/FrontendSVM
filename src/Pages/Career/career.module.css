@@ -10,7 +10,7 @@
   color: white;
   font-weight: 700 !important;
   /* text-transform: uppercase !important; */
-  font-family: "Orbitron" !important;
+  font-family: 'Montserrat' !important;
   letter-spacing: 4px !important;
   padding: 30px 10%;
 }
@@ -76,7 +76,7 @@
   color: #4f5457;
   font-size: 37px !important;
   font-weight: 900 !important;
-  font-family: "NothanSans" !important;
+  font-family: 'Montserrat' !important;
   line-height: 60px !important;
 }
 
@@ -206,7 +206,7 @@
 .TermsMainContainer p > strong,
 .TermsMainContainer p > a,
 .TermsMainContainer p > a > u {
-  font-family: "Goutham" !important;
+  font-family: 'Montserrat' !important;
   font-size: 15px !important;
   text-align: justify;
   overflow-x: hidden !important;
@@ -215,7 +215,7 @@
 .TermsMainContainer h4,
 .TermsMainContainer h4 > span,
 .TermsMainContainer h4 > strong {
-  font-family: "NothanSans" !important;
+  font-family: 'Montserrat' !important;
   font-size: 28px !important;
   line-height: 35px !important;
   color: #004787 !important;

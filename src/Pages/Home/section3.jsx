@@ -31,11 +31,11 @@ const Section3 = () => {
       </Col>
       <Col lg={6}>
         <Typography className={`${classes.Section3HeadText}`} variant="h1">
-          About <b className={classes.boldClass}>SVM</b>
+          About <b className={classes.boldClass}>SRIVARU</b>
         </Typography>
         <Typography className={`mb-2 ${classes.Section3NrmlText}`}>
           SVM is dedicated to designing and manufacturing premium electric
-          motorbikes in India. We revolutionize the two-wheeler vehicles and
+          two-wheelers in India. We revolutionize the two-wheeler vehicles and
           propel the industry forward by leveraging sustainable energy solutions
           without compromising the quality of the rider’s experience.
         </Typography>

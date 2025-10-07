@@ -4,7 +4,7 @@
 }
 
 .section1HeaderText {
-  font-family: "Orbitron" !important;
+  font-family: 'Montserrat' !important;
   font-size: 40px !important;
   line-height: 80px !important;
   font-weight: bolder !important;
@@ -126,7 +126,7 @@
 }
 
 .StoreFloatText1 {
-  font-family: "NothanSans" !important;
+  font-family: 'Montserrat' !important;
   position: absolute;
   font-size: 12rem !important;
   font-weight: bolder !important;

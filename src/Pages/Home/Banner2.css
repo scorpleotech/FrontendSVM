@@ -44,7 +44,7 @@
 }
 
 .banner-btn {
-    font-family: "Orbitron", monospace, sans-serif !important;
+    font-family: 'Montserrat' !important;
     font-size: 1.1rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -97,7 +97,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat' !important;
     font-size: 14px;
     font-weight: bold;
     color: #000;

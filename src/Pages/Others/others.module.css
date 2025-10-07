@@ -3,14 +3,14 @@
 }
 
 .eventsPageMainHeading {
-  font-family: "orbitron" !important;
+  font-family: 'Montserrat' !important;
   font-size: 50px !important;
   line-height: normal !important;
   text-align: center !important;
 }
 
 .eventsPageSubHeading {
-  font-family: "NothanSans" !important;
+  font-family: 'Montserrat' !important;
   font-size: 22px !important;
   line-height: normal !important;
   text-align: center !important;
@@ -39,7 +39,7 @@
 }
 
 .eventsBannerHeaderText {
-  font-family: "NothanSans" !important;
+  font-family: 'Montserrat' !important;
   font-size: 20px !important;
   font-weight: 600 !important;
   line-height: 30px !important;
@@ -133,13 +133,13 @@
   color: white;
   font-weight: 700 !important;
   /* text-transform: uppercase !important; */
-  font-family: "Orbitron" !important;
+  font-family: 'Montserrat' !important;
   letter-spacing: 4px !important;
   padding: 30px 10%;
 }
 
 .TermsMainContainer h4 {
-  font-family: "NothanSans" !important;
+  font-family: 'Montserrat' !important;
   color: #004787 !important;
 }
 
@@ -149,7 +149,7 @@
 .TermsMainContainer p > strong,
 .TermsMainContainer p > a,
 .TermsMainContainer p > a > u {
-  font-family: "Goutham" !important;
+  font-family: 'Montserrat' !important;
   font-size: 15px !important;
   text-align: justify !important;
   overflow-x: hidden !important;
@@ -461,7 +461,7 @@
 }
 
 .enQuiryFormHeading {
-  font-family: "Orbitron" !important;
+  font-family: 'Montserrat' !important;
   font-size: 30px !important;
   line-height: normal !important;
   color: #004787 !important;

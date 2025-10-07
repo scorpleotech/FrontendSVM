@@ -71,9 +71,11 @@ code {
   /* width: 0px; */
   display: none !important;
 }
+
 ::-webkit-scrollbar-track {
   border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #969696 !important;
   border-radius: 10px;
@@ -123,6 +125,7 @@ code {
 }
 
 @media screen and (max-width: 1024px) {
+
   .slick-prev,
   .slick-next {
     top: 25% !important;

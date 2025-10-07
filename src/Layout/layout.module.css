@@ -1,3 +1,16 @@
+/* Import Montserrat font from Google Fonts for reliable loading */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap');
+
+/* Force Montserrat for all navigation elements */
+.navbar,
+.navbar *,
+.navbarContainer,
+.navbarContainer *,
+.linkburron,
+.linkburron * {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+}
+
 .headerMainDiv {
   display: flex;
   justify-content: space-between;
@@ -9,7 +22,7 @@
 }
 
 .navbarContainer li button {
-  font-family: "Montserrat", sans-serif !important;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
 }
 
 .defaultHeaderParentDiv {
@@ -28,7 +41,6 @@
 }
 
 .defaultContentParentDiv {
-  /* position: relative; */
   padding-top: 70px;
   min-height: 100vh;
 }
@@ -49,10 +61,8 @@
   margin: 0;
   padding: 0;
   column-gap: 8px;
-  /* Reduced from 10px */
   margin-left: 110px;
   flex-wrap: nowrap;
-  /* Prevent wrapping */
 }
 
 .MenuIcon {
@@ -63,38 +73,35 @@
   display: flex;
   align-items: center;
   column-gap: 8px;
-  /* Reduced from 10px */
 }
 
 .activebtn {}
+
 .hamburgerMenuButton {
   background-color: black !important;
   color: white !important;
-  /* makes the icon visible */
   border: none !important;
   box-shadow: none !important;
-  /* optional: remove MUI shadow */
 }
+
 .loginButton {
-  font-family: "Orbitron" !important;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
   background-color: var(--black-background) !important;
   color: var(--white-background) !important;
   border: none !important;
   font-size: 12px !important;
   border-radius: 10px !important;
   padding: 7px 15px 5px !important;
-  /* Reduced horizontal padding */
   display: flex;
   column-gap: 5px;
   align-items: center;
   font-weight: 600 !important;
   min-height: 30px !important;
   white-space: nowrap;
-  /* Prevent text wrapping */
 }
 
 .loginButton span {
-  font-family: "Orbitron" !important;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
 }
 
 .subscribeError {
@@ -113,24 +120,19 @@
 
 .logo {
   height: 15px;
-  /* Further reduced from 30px */
 }
 
 .linkburron {
-  font-family: "Montserrat" !important;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
   font-size: 13px !important;
-  /* Slightly reduced from 14px */
   text-align: left;
   color: var(--black-background) !important;
   font-weight: 600 !important;
   min-width: unset !important;
   padding: 5px 8px !important;
-  /* Reduced horizontal padding */
   letter-spacing: 0.5px !important;
-  /* Reduced letter spacing */
   border-radius: 5px !important;
   white-space: nowrap !important;
-  /* Prevent text wrapping */
 }
 
 .activebtn .linkburron {
@@ -146,9 +148,6 @@
 
 .footerRow {
   width: 90% !important;
-  /* margin: 20px 20px 20px 20px !important;  */
-  /* display: flex;
-    flex-direction: column; */
   row-gap: 50px;
   margin: 0 5% !important;
   justify-content: space-between !important;
@@ -166,7 +165,7 @@
 }
 
 .footerheadingText {
-  font-family: "NothanSans" !important;
+  font-family: 'Montserrat' !important;
   font-size: 20px !important;
   font-weight: 600 !important;
   text-decoration: underline;
@@ -225,32 +224,8 @@
 
 .WhatsAppBtn {
   width: 50px;
-  /* Adjust as needed */
   height: 50px;
-  /* Adjust as needed */
 }
-
-/* .WhatsAppBtn::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
-  animation: wave 1.5s infinite ease-out;
-  border-radius: 50%;
-}
-
-@keyframes wave {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1.5);
-    opacity: 0;
-  }
-} */
 
 .footerEmailInput::placeholder {
   font-size: 12px !important;
@@ -348,10 +323,11 @@
 
 .drawerLinks {
   font-size: 15px !important;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
 }
 
 .drawerLinks span {
-  font-family: "Orbitron" !important;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
 }
 
 /* Optimized media queries for better menu spacing */
@@ -359,7 +335,6 @@
 @media screen and (max-width: 1920px) {
   .headerMainDiv {
     padding: 20px 30px 15px 60px;
-    /* Better spacing for large screens */
   }
 
   .navbar {
@@ -414,7 +389,6 @@
 
   .logo {
     height: 14px;
-    /* Reduced from 35px */
   }
 
   .linkburron {
@@ -439,10 +413,6 @@
 
   .drawerLinks {
     font-size: 14px !important;
-  }
-
-  .footerMainDiv {
-    /* height: 350px; */
   }
 
   .footerLogo {
@@ -518,7 +488,6 @@
 
   .logo {
     height: 13px !important;
-    /* Reduced from 25px */
   }
 
   .linkburron {
@@ -546,7 +515,6 @@
   }
 }
 
-/* New breakpoint for better 100% and 125% zoom handling */
 @media screen and (max-width: 1000px) {
   .headerMainDiv {
     padding: 20px 15px 15px 25px;
@@ -592,14 +560,12 @@
   }
 
   .footerMainDiv {
-    /* height: 510px !important; */
     padding-left: 50px !important;
     padding-right: 50px !important;
   }
 
   .footerCopyrightText {
     left: 60px;
-    /* bottom: -340px; */
   }
 
   .defaultContentParentDiv {
@@ -651,19 +617,13 @@
 
 @media screen and (max-width: 500px) {
   .footerCopyrightText {
-    /* left: 16px !important; */
-    /* bottom: -500px !important; */
     position: unset !important;
-    /* padding-left: 7.5%; */
     margin-top: 20px !important;
     width: 100% !important;
   }
 
   .footerCardImageContainer {
-    /* bottom: -100px;
-    left: 15px; */
     position: unset !important;
-    /* padding-left: 7.5%; */
     margin-top: 20px !important;
   }
 
@@ -681,8 +641,6 @@
   }
 
   .footerMainDiv {
-    /* height: 950px !important; */
-    /* padding-left: 30px;   */
     position: relative;
     padding-bottom: 30px !important;
   }
@@ -697,10 +655,6 @@
     margin: 0 7.5% !important;
   }
 
-  .footerSubscribeBtnSubcontainer {
-    /* width: 100%; */
-  }
-
   .footerheadingText,
   .footerSubHeaderText {
     font-size: 10px !important;
@@ -713,14 +667,6 @@
 }
 
 @media screen and (max-width: 400px) {
-  .footerMainDiv {
-    /* height: 1000px !important; */
-  }
-
-  .footerCopyrightText {
-    /* bottom: -535px !important; */
-  }
-
   .footerCardImageContainer {
     bottom: -125px;
   }

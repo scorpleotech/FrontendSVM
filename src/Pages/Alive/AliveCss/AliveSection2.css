@@ -1,7 +1,7 @@
 /* aliveSection2.css - Using exact Prana styling */
 
 .Section2MainHeader {
-    font-family: "NothanSans" !important;
+    font-family: 'Montserrat' !important;
     font-size: 45px !important;
     font-weight: 900 !important;
     line-height: 55px !important;
@@ -57,7 +57,7 @@ justify-content: center;
 }
 
 .CategoryHeader {
-    font-family: "Orbitron" !important;
+    font-family: 'Montserrat' !important;
     font-size: 50px !important;
     font-weight: 600 !important;
     line-height: 70px !important;
