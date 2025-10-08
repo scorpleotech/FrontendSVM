@@ -7,9 +7,9 @@ import {
   DemoZoomInIcon,
   DemoZoomOutIcon,
 } from "../../Assets/Icons/icons";
-import demologo1 from "../../Assets/Images/demoLogo1.png";
-import demologo2 from "../../Assets/Images/demologo2.png";
-import demologo3 from "../../Assets/Images/demologo3.png";
+import demologo1 from "../../Assets/Images/about and demo/demoLogo1.png";
+import demologo2 from "../../Assets/Images/about and demo/demologo2.png";
+import demologo3 from "../../Assets/Images/about and demo/demologo3.png";
 
 const section1 = () => {
   return (
