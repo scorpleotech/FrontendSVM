@@ -5,16 +5,15 @@
 /* Banner Container */
 .alive-banner-container {
     background: linear-gradient(135deg, #e8eef5 0%, #d1dae6 100%);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        min-height: clamp(70vh, 85vh, 90vh);
-        width: 100%;
-        position: relative;
-        overflow: hidden;
-        font-family: "Arial", sans-serif;
-        box-sizing: border-box;
-        overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    min-height: clamp(70vh, 85vh, 90vh);
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Montserrat' !important;
+    box-sizing: border-box;
 }
 
 /* Top Right Logo */
@@ -36,10 +35,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
     max-width: 500px;
     width: 45%;
     z-index: 2;
     padding-left: 2rem;
+    align-self: center;
 }
 
 /* ALIVE Logo + Tagline Box */
@@ -49,7 +50,6 @@
     align-items: flex-start;
     width: clamp(120px, 30vw, 300px);
     margin-bottom: 2rem;
-    /* space below tagline box */
 }
 
 .alive-logo-img {
@@ -76,11 +76,10 @@
     align-items: flex-start;
     gap: 1.5rem;
     margin-top: 1.5rem;
-    /* extra space above button */
 }
 
 .pre-book-btn {
-    font-family: "Orbitron", monospace, sans-serif !important;
+    font-family: 'Montserrat' !important;
     font-size: clamp(0.50rem, 1.5vw, 1.1rem);
     font-weight: 300;
     text-transform: uppercase;
@@ -118,7 +117,7 @@
 .right-content {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-end;
     flex: 1;
     height: 100%;
     width: 80%;
@@ -129,10 +128,11 @@
     position: relative;
     display: flex;
     justify-content: flex-start;
+    align-items: flex-end;
     width: 100%;
     padding-right: 350px;
     margin-left: -160px;
-    margin-top: 20px;
+    height: 100%;
 }
 
 .scooter-image {
@@ -154,14 +154,82 @@
     z-index: 3;
 }
 
-/* ===== MOBILE VIEW ===== */
+/* ===== TABLET VIEW (769px to 1024px) ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .alive-banner-container {
+        min-height: 80vh;
+        align-items: flex-end;
+    }
+
+    .left-content {
+        width: 48%;
+        padding-left: 2.5rem;
+        max-width: 450px;
+        align-self: center;
+    }
+
+    .alive-logo-box {
+        width: clamp(180px, 28vw, 260px);
+        margin-bottom: 1.5rem;
+    }
+
+    .tagline {
+        font-size: clamp(0.85rem, 1.9vw, 1.1rem);
+    }
+
+    .pre-book-section {
+        margin-top: 1.2rem;
+        gap: 1.2rem;
+    }
+
+    .pre-book-btn {
+        font-size: clamp(0.85rem, 1.6vw, 1rem);
+        max-width: 280px;
+        padding: clamp(10px, 1.6vw, 13px) clamp(20px, 3.2vw, 38px);
+    }
+
+    .sub-text {
+        font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+    }
+
+    .right-content {
+        width: 75%;
+        align-items: flex-end;
+    }
+
+    .scooter-container {
+        padding-right: 200px;
+        margin-left: -100px;
+        align-items: flex-end;
+    }
+
+    .scooter-image {
+        width: clamp(700px, 80vw, 1200px);
+        max-height: 85vh;
+        align-self: flex-end;
+    }
+
+    .social-links {
+        right: 25px;
+        gap: 18px;
+    }
+
+    .top-right-logo {
+        width: clamp(100px, 11vw, 140px);
+    }
+
+    .top-right-text {
+        right: clamp(20px, 6vw, 100px);
+    }
+}
+
+/* ===== MOBILE VIEW (max-width: 768px) ===== */
 @media (max-width: 768px) {
     .alive-banner-container {
         min-height: 25vh;
         padding: 0%;
         flex-direction: row;
         align-items: flex-end;
-        /* Changed to align items to bottom */
         position: relative;
         overflow: visible;
     }
@@ -171,18 +239,14 @@
         padding-left: 1rem;
         align-items: flex-start;
         align-self: center;
-        /* Keep left content centered vertically */
     }
 
-    /* Reduce space between tagline and button in mobile */
     .alive-logo-box {
         margin-bottom: 0.5rem;
-        /* reduced from 2rem */
     }
 
     .pre-book-section {
         margin-top: 0.5rem;
-        /* reduced from 1.5rem */
     }
 
     .tagline {
@@ -201,25 +265,18 @@
         height: 100%;
         overflow: visible;
         align-items: flex-end;
-        /* Align content to bottom */
         position: relative;
     }
 
     .scooter-container {
         padding-right: 0;
-       
         overflow: visible;
         height: auto;
-        /* Changed from 100% to auto */
         display: flex;
         align-items: flex-end;
-        /* Align scooter to bottom */
         margin-bottom: 0;
-        /* Ensure it sits at the very bottom */
         margin-left: 0;
-            /* no negative margin */
-            overflow: hidden;
-            /* prevent leak */
+        overflow: hidden;
     }
 
     .scooter-image {
@@ -228,20 +285,17 @@
         height: auto;
         object-fit: contain;
         align-self: flex-end;
-        /* Ensure image aligns to bottom */
     }
 
     .social-links {
         position: absolute;
         bottom: 10px;
-        /* Positioned in bottom corner */
         right: 10px;
         transform: none;
         flex-direction: row;
         justify-content: flex-end;
         gap: 15px;
         z-index: 4;
-        /* Higher z-index to ensure it's above the scooter */
     }
 
     .pre-book-btn {

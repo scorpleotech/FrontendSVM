@@ -21,13 +21,14 @@ const AliveIndex = () => {
   return (
     <div>
       <Helmet>
-        <title>Alive Electric Bike</title>
-        <meta property="og:title" content="Alive Electric Bike" />
+        <title>ALIVE Electric Scooter – Smart, Stylish & Powerful Ride | Srivaru Motors</title>
+        <meta property="og:title" content="ALIVE Electric Scooter – Smart, Stylish & Powerful Ride | Srivaru Motors" />
         <meta
           property="og:description"
-          content="Discover the Alive Electric Bike – stylish, efficient, and eco-friendly."
+          content="Experience the next-gen ALIVE Electric Scooter by Srivaru Motors – designed for comfort, performance & sustainability. Ride smarter, go farther!
+"
         />
-        <meta name="keywords" content="Alive Electric Bike, alive Bike Price" />
+        <meta name="keywords" content="alive electric scooter, srivaru motors alive, best electric scooter india, lightweight electric scooter, smart e scooter, eco friendly scooter, electric scooter for city ride, affordable electric scooter, stylish electric scooter, alive plus, alive lite, alive scooter series" />
       </Helmet>
 
       {/* ✅ Banner */}

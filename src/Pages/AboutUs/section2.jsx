@@ -21,13 +21,13 @@ const Section2 = () => {
                 <span
                   className={`${classes.section2headerText2} ${classes.SvmSecondHeading}`}
                 >
-                  SVM
+                  SRIVARU
                 </span>{" "}
                 is dedicated to designing and manufacturing premium electric
                 motorbikes in India. We revolutionize the two-wheeler vehicles
                 and propel the industry forward by leveraging sustainable energy
                 solutions without compromising the quality of the rider’s
-                experience. SVM creates unique E2W vehicles that provide an
+                experience. Srivaru creates unique E2W vehicles that provide an
                 exceptional riding experience with the highest rider comfort.
                 The result of intensive research and design innovations gives
                 our customers an unparalleled product with an automated
@@ -35,7 +35,7 @@ const Section2 = () => {
                 improve stability, a zero-vibration riding feel and
                 best-in-class safety features. We offer the highest product
                 specifications in terms of reach and every bike comes with an
-                easy plug-and-play charging solution. SVM has a broad array of
+                easy plug-and-play charging solution. Srivaru has a broad array of
                 intellectual property, including a patent chassis and drive
                 acceleration system. Our much-celebrated customer reviews speak
                 volumes and are a testament to our hard work to create a new era
@@ -107,13 +107,13 @@ const Section2 = () => {
                 <span
                   className={`${classes.section2headerText2} ${classes.SvmSecondHeading}`}
                 >
-                  SVM
+                  Srivaru
                 </span>{" "}
                 is dedicated to designing and manufacturing premium electric
                 motorbikes in India. We revolutionize the two-wheeler vehicles
                 and propel the industry forward by leveraging sustainable energy
                 solutions without compromising the quality of the rider’s
-                experience. SVM creates unique E2W vehicles that provide an
+                experience. Srivaru creates unique E2W vehicles that provide an
                 exceptional riding experience with the highest rider comfort.
                 The result of intensive research and design innovations gives
                 our customers an unparalleled product with an automated
@@ -121,7 +121,7 @@ const Section2 = () => {
                 improve stability, a zero-vibration riding feel and
                 best-in-class safety features. We offer the highest product
                 specifications in terms of reach and every bike comes with an
-                easy plug-and-play charging solution. SVM has a broad array of
+                easy plug-and-play charging solution. Srivaru has a broad array of
                 intellectual property, including a patent chassis and drive
                 acceleration system. Our much-celebrated customer reviews speak
                 volumes and are a testament to our hard work to create a new era

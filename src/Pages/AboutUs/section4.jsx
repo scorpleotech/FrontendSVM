@@ -2,15 +2,17 @@ import React from "react";
 import classes from "./aboutus.module.css";
 import { Typography } from "@mui/material";
 import { Row, Col } from "react-bootstrap";
-import image1Light from "../../Assets/Images/aboutJourney6.png";
-import image2SVM from "../../Assets/Images/aboutJourney5.png";
-import image3ThumbsUp from "../../Assets/Images/aboutJourney1.png";
-import image4SportBike from "../../Assets/Images/aboutJourney3.png";
-import image5prana from "../../Assets/Images/aboutJourney2.png";
-import image6Bike from "../../Assets/Images/aboutJourney7.png";
-import image7Eco from "../../Assets/Images/aboutJourney4.png";
-import image8Nasdaq from "../../Assets/Images/2023 Icon.png";
-import image9Prana from "../../Assets/Images/2024 Icon.png";
+import image1Light from "../../Assets/Images/about and demo/aboutJourney6.png";
+import image2SVM from "../../Assets/Images/about and demo/aboutJourney5.png";
+import image3ThumbsUp from "../../Assets/Images/about and demo/aboutJourney1.png";
+import image4SportBike from "../../Assets/Images/about and demo/aboutJourney3.png";
+import image5prana from "../../Assets/Images/about and demo/aboutJourney2.png";
+import image6Bike from "../../Assets/Images/about and demo/aboutJourney7.png";
+import image7Eco from "../../Assets/Images/about and demo/aboutJourney4.png";
+import image8Nasdaq from "../../Assets/Images/about and demo/2023 Icon.png";
+import image9Prana from "../../Assets/Images/about and demo/2024 Icon.png";
+import image10_2025 from "../../Assets/Images/about and demo/2025 Icon.png";
+import image11_2025 from "../../Assets/Images/about and demo/2024 Icon.png";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -42,12 +44,12 @@ const Section4 = () => {
         </Typography>
         <div className={classes.section4SubContainer}>
           <Row className={classes.RowContainer1}>
-            <Col>
+            <Col lg={2}>
               <div className={classes.ColumnContainer}>
                 <div className={classes.section4SmallTextContainer}>
                   <Typography className={classes.section4SubHeaderText}>
-                    Recognized That EVS Are The Future And Took A Job At Tesla
-                    To Learn It At The Source.
+                    Joined Tesla to learn EVs from the source.
+
                   </Typography>
                 </div>
                 <div
@@ -64,12 +66,12 @@ const Section4 = () => {
                 </div>
               </div>
             </Col>
-            <Col>
+            <Col lg={2}>
               <div className={classes.ColumnContainer}>
                 <div className={classes.section4SmallTextContainer}>
                   <Typography className={classes.section4SubHeaderText}>
-                    Formalised SVM As A PVT Limited Company And Started Making
-                    Prana's Production Version.
+                    Formed SRIVARU to build Prana’s production model.
+
                   </Typography>
                 </div>
                 <div className={classes.section4SmallImagesContainer}>
@@ -84,13 +86,12 @@ const Section4 = () => {
                 </div>
               </div>
             </Col>
-            <Col>
+            <Col lg={2}>
               <div className={classes.ColumnContainer}>
                 <div className={classes.section4SmallTextContainer}>
                   <Typography className={classes.section4SubHeaderText}>
-                    # Prana Gets The Thumbs Up
-                    <br /># Prana Unveiled
-                    <br /># Prana Hits The Road.
+                   Prana Approved, Unveiled, and On the Road.
+
                   </Typography>
                 </div>
                 <div className={classes.section4SmallImagesContainer}>
@@ -105,7 +106,7 @@ const Section4 = () => {
                 </div>
               </div>
             </Col>
-            <Col>
+            <Col lg={2}>
               <div className={classes.ColumnContainer}>
                 <div className={classes.section4SmallTextContainer}>
                   <Typography className={classes.section4SubHeaderText}>
@@ -124,12 +125,12 @@ const Section4 = () => {
                 </div>
               </div>
             </Col>
-            <Col>
+            <Col lg={2}>
               <div className={classes.ColumnContainer}>
                 <div className={classes.section4SmallTextContainer}>
                   <Typography className={classes.section4SubHeaderText}>
-                    <b>Prana 2.0 Unveiled</b>
-                  </Typography>
+                  Prana 2.0 Unveiled
+                </Typography>
                 </div>
                 <div className={classes.section4SmallImagesContainer}>
                   <img
@@ -143,10 +144,29 @@ const Section4 = () => {
                 </div>
               </div>
             </Col>
+            <Col lg={2}>
+              <div className={classes.ColumnContainer}>
+                <div className={classes.section4SmallTextContainer}>
+                  <Typography className={classes.section4SubHeaderText}>
+                    Prana Class Unveiled
+                  </Typography>
+                </div>
+                <div className={classes.section4SmallImagesContainer}>
+                  <img
+                    src={image11_2025}
+                    alt="2025 milestone 2"
+                    className={classes.section4SmallImages}
+                  />
+                  <Typography className={classes.section4YearText}>
+                    2025
+                  </Typography>
+                </div>
+              </div>
+            </Col>
           </Row>
           <div className={classes.section4ColorDividerLine} />
           <Row className={`${classes.RowContainer2}`}>
-            <Col lg={3}>
+            <Col lg={{ span: 2, offset: 1 }}>
               <div
                 className={`${classes.ColumnContainer} ${classes.reverseColumn}`}
               >
@@ -171,7 +191,7 @@ const Section4 = () => {
                 </div>
               </div>
             </Col>
-            <Col lg={3}>
+            <Col lg={2}>
               <div
                 className={`${classes.ColumnContainer} ${classes.reverseColumn}`}
               >
@@ -194,16 +214,13 @@ const Section4 = () => {
                 </div>
               </div>
             </Col>
-            <Col lg={3}>
+            <Col lg={2}>
               <div
                 className={`${classes.ColumnContainer} ${classes.reverseColumn}`}
               >
                 <div className={classes.section4SmallTextContainer}>
                   <Typography className={classes.section4SubHeaderText}>
-                    Pre Bookings Started
-                    <br /># Dealership Infrastructure
-                    <br />
-                    Development
+                    Pre-bookings Open & Dealerships Growing
                   </Typography>
                 </div>
                 <div
@@ -220,7 +237,7 @@ const Section4 = () => {
                 </div>
               </div>
             </Col>
-            <Col lg={3}>
+            <Col lg={2}>
               <div
                 className={`${classes.ColumnContainer} ${classes.reverseColumn}`}
               >
@@ -243,13 +260,34 @@ const Section4 = () => {
                 </div>
               </div>
             </Col>
+            <Col lg={2}>
+              <div
+                className={`${classes.ColumnContainer} ${classes.reverseColumn}`}
+              >
+                <div className={classes.section4SmallTextContainer}>
+                  <Typography className={classes.section4SubHeaderText}>
+                    Alive Scooters Unveiled
+                  </Typography>
+                </div>
+                <div
+                  className={`${classes.section4SmallImagesContainer} ${classes.reverseColumn}`}
+                >
+                  <img
+                    src={image10_2025}
+                    alt="2025 milestone 1"
+                    className={classes.section4SmallImages}
+                  />
+                  <Typography className={classes.section4YearText}>
+                    2025
+                  </Typography>
+                </div>
+              </div>
+            </Col>
           </Row>
         </div>
         <div className={classes.MobileResponsiveContainer}>
           <Carousel
             responsive={responsive}
-            // autoPlay={true}
-            // autoPlaySpeed={1500}
             infinite={true}
             arrows={true}
             className={classes.TimelineCorosel}
@@ -257,8 +295,8 @@ const Section4 = () => {
             <div className={classes.ColumnContainer}>
               <div className={classes.section4SmallTextContainer}>
                 <Typography className={classes.section4SubHeaderText}>
-                  Recognized That EVS Are The Future And Took A Job At Tesla To
-                  Learn It At The Source.
+                  Joined Tesla to learn EVs from the source.
+
                 </Typography>
               </div>
               <div
@@ -300,8 +338,8 @@ const Section4 = () => {
             <div className={classes.ColumnContainer}>
               <div className={classes.section4SmallTextContainer}>
                 <Typography className={classes.section4SubHeaderText}>
-                  Formalised SVM As A PVT Limited Company And Started Making
-                  Prana's Production Version.
+                   Formed SRIVARU to build Prana’s production model.
+
                 </Typography>
               </div>
               <div className={classes.section4SmallImagesContainer}>
@@ -339,9 +377,8 @@ const Section4 = () => {
             <div className={classes.ColumnContainer}>
               <div className={classes.section4SmallTextContainer}>
                 <Typography className={classes.section4SubHeaderText}>
-                  # Prana Gets The Thumbs Up
-                  <br /># Prana Unveiled
-                  <br /># Prana Hits The Road.
+                  Prana Approved, Unveiled, and On the Road.
+
                 </Typography>
               </div>
               <div className={classes.section4SmallImagesContainer}>
@@ -360,10 +397,7 @@ const Section4 = () => {
             >
               <div className={classes.section4SmallTextContainer}>
                 <Typography className={classes.section4SubHeaderText}>
-                  Pre Bookings Started
-                  <br /># Dealership Infrastructure
-                  <br />
-                  Development
+                  Pre-bookings Open & Dealerships Growing
                 </Typography>
               </div>
               <div
@@ -396,13 +430,17 @@ const Section4 = () => {
                 </Typography>
               </div>
             </div>
-            <div className={classes.ColumnContainer}>
+            <div
+              className={`${classes.ColumnContainer} ${classes.reverseColumn}`}
+            >
               <div className={classes.section4SmallTextContainer}>
                 <Typography className={classes.section4SubHeaderText}>
                   Listed in Nasdaq
                 </Typography>
               </div>
-              <div className={classes.section4SmallImagesContainer}>
+              <div
+                className={`${classes.section4SmallImagesContainer} ${classes.reverseColumn}`}
+              >
                 <img
                   src={image8Nasdaq}
                   alt="image1"
@@ -416,7 +454,7 @@ const Section4 = () => {
             <div className={classes.ColumnContainer}>
               <div className={classes.section4SmallTextContainer}>
                 <Typography className={classes.section4SubHeaderText}>
-                  <b>Prana 2.0 Unveiled</b>
+                  Prana 2.0 Unveiled
                 </Typography>
               </div>
               <div className={classes.section4SmallImagesContainer}>
@@ -430,8 +468,45 @@ const Section4 = () => {
                 </Typography>
               </div>
             </div>
+            <div
+              className={`${classes.ColumnContainer} ${classes.reverseColumn}`}
+            >
+              <div className={classes.section4SmallTextContainer}>
+                <Typography className={classes.section4SubHeaderText}>
+                  Alive Scooters Unveiled
+                </Typography>
+              </div>
+              <div
+                className={`${classes.section4SmallImagesContainer} ${classes.reverseColumn}`}
+              >
+                <img
+                  src={image10_2025}
+                  alt="2025 milestone 1"
+                  className={classes.section4SmallImages}
+                />
+                <Typography className={classes.section4YearText}>
+                  2025
+                </Typography>
+              </div>
+            </div>
+            <div className={classes.ColumnContainer}>
+              <div className={classes.section4SmallTextContainer}>
+                <Typography className={classes.section4SubHeaderText}>
+                  Prana Class Unveiled
+                </Typography>
+              </div>
+              <div className={classes.section4SmallImagesContainer}>
+                <img
+                  src={image11_2025}
+                  alt="2025 milestone 2"
+                  className={classes.section4SmallImages}
+                />
+                <Typography className={classes.section4YearText}>
+                  2025
+                </Typography>
+              </div>
+            </div>
           </Carousel>
-          {/* <div className={classes.MobileRowContainer}></div> */}
         </div>
       </div>
     </div>

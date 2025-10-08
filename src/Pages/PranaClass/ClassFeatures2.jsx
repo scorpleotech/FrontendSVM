@@ -3,11 +3,11 @@ import classes from "./ClassCss/ClassFeatures2.module.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 // Import assets
-import h1 from "../../Assets/Images/prana_class/h1.png";
-import h2 from "../../Assets/Images/prana_class/h5.JPG";
-import h3 from "../../Assets/Images/prana_class/h3.png";
-import h4 from "../../Assets/Images/prana_class/h4.JPG";
-import h5 from "../../Assets/Images/prana_class/h2.JPG";
+import h1 from "../../Assets/Images/prana_class/Caserol webp/h1.webp";
+import h2 from "../../Assets/Images/prana_class/Caserol webp/h5.webp";
+import h3 from "../../Assets/Images/prana_class/Caserol webp/h3 copy.webp";
+import h4 from "../../Assets/Images/prana_class/Caserol webp/h4.webp";
+import h5 from "../../Assets/Images/prana_class/Caserol webp/h2.webp";
 
 const ClassFeatures2 = () => {
   const [currentFeature, setCurrentFeature] = useState(0);

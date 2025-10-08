@@ -1,3 +1,31 @@
+/* ============================================
+   GLOBAL FONT CONFIGURATION - MONTSERRAT
+   ============================================
+   To remove Montserrat globally, simply delete
+   or comment out the section below
+   ========================================= */
+
+/* Import Montserrat font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+/* Apply Montserrat globally to all elements */
+* {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+}
+
+body {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+}
+
+/* ============================================
+   END OF GLOBAL FONT CONFIGURATION
+   ========================================= */
+
+
+/* ============================================
+   OTHER STYLES (DO NOT MODIFY)
+   ========================================= */
+
 .div0 {
   left: 70px !important;
 }
@@ -61,20 +89,24 @@ ul:has(.all-listing) {
   overflow: scroll !important;
 }
 
-.city-autocomplete > div {
+.city-autocomplete>div {
   padding-top: 3.5px !important;
   padding-bottom: 3.5px !important;
 }
-.city-autocomplete-agent > div {
+
+.city-autocomplete-agent>div {
   background-color: rgba(244, 244, 244, 1) !important;
 }
+
 .city-autocomplete-agent ::placeholder {
   color: black !important;
 }
-.autocomplete-book-demo > div {
+
+.autocomplete-book-demo>div {
   padding: 4.5px 3.5px 4.5px 15px !important;
   border-radius: 20px !important;
 }
+
 @media screen and (max-width: 500px) {
   .react-multiple-carousel__arrow::before {
     font-size: unset !important;

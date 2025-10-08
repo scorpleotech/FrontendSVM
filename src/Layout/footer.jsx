@@ -105,6 +105,16 @@ const Footer = () => {
                     Prana Grand
                   </Button>
                 </Link>
+                <Link to="/class">
+                  <Button variant="text" className={classes.footerBtn}>
+                    Prana Class
+                  </Button>
+                </Link>
+                <Link to="/alive">
+                  <Button variant="text" className={classes.footerBtn}>
+                    Alive
+                  </Button>
+                </Link>
               </div>
             </Col>
             <Col xl="auto" md={4} xs={12}>
@@ -321,6 +331,16 @@ const Footer = () => {
                   <Link to="/prana">
                     <Button variant="text" className={classes.footerBtn}>
                       Prana Grand
+                    </Button>
+                  </Link>
+                  <Link to="/class">
+                    <Button variant="text" className={classes.footerBtn}>
+                      Prana Class
+                    </Button>
+                  </Link>
+                  <Link to="/alive">
+                    <Button variant="text" className={classes.footerBtn}>
+                      Alive
                     </Button>
                   </Link>
                 </div>

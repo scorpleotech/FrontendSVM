@@ -9,7 +9,7 @@
     width: 100vw;
     position: relative;
     overflow: hidden;
-    font-family: "Arial", sans-serif;
+    font-family: 'Montserrat' !important;
     box-sizing: border-box;
 }
 
@@ -64,7 +64,7 @@
 }
 
 .preBookBtn {
-    font-family: "Orbitron", monospace, sans-serif !important;
+    font-family: 'Montserrat' !important;
     font-size: clamp(0.50rem, 1.5vw, 1.1rem);
     font-weight: 300;
     text-transform: uppercase;
@@ -120,12 +120,9 @@
     overflow: hidden;
 }
 
-/* Reduced Scooter Size */
 .scooterImage {
     height: 90vh;
-    /* reduced from 100vh */
     max-height: 720px;
-    /* prevents overly large image */
     width: auto;
     object-fit: contain;
     display: block;
@@ -142,6 +139,51 @@
     z-index: 3;
 }
 
+/* Tablet Styles (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .bannerContainer {
+        min-height: 80vh;
+    }
+
+    .leftContent {
+        width: 50%;
+        padding-left: 3rem;
+        gap: 1.5rem;
+    }
+
+    .aliveLogoImg {
+        width: clamp(180px, 25vw, 280px);
+    }
+
+    .tagline {
+        font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+    }
+
+    .preBookBtn {
+        font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+        max-width: 280px;
+    }
+
+    .preBookSubtext {
+        font-size: 16px;
+    }
+
+    .scooterImage {
+        height: 85vh;
+        max-height: 650px;
+    }
+
+    .socialLinks {
+        right: 25px;
+        gap: 18px;
+    }
+
+    .topRightLogo {
+        width: clamp(100px, 10vw, 140px);
+    }
+}
+
+/* Mobile Styles (max-width: 768px) */
 @media (max-width: 768px) {
     .bannerContainer {
         min-height: 30vh;
@@ -161,12 +203,10 @@
         margin: 1px;
     }
 
-    /* Hide only preBookSubtext in mobile */
     .preBookSubtext {
         display: none;
     }
 
-    /* Make pre-book button single line in mobile */
     .preBookBtn {
         white-space: nowrap;
         max-width: 60%;
@@ -183,18 +223,14 @@
     .scooterContainer {
         justify-content: flex-start;
         margin-left: -80px;
-        /* moved significantly left for better positioning */
         padding: 0;
         height: 100%;
         overflow: hidden;
     }
 
-    /* Increased scooter image size for mobile */
     .scooterImage {
         width: 130%;
-        /* increased from 170% */
         max-width: 900px;
-        /* increased from 700px */
         height: auto;
         object-fit: contain;
         display: block;

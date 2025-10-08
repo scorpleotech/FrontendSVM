@@ -13,13 +13,13 @@
 }
 
 .pranaMainHeader {
-    font-family: "Arial", sans-serif !important;
-    font-size: 45px !important;
-    font-weight: 900 !important;
-    line-height: 55px !important;
-    text-align: left !important;
-    margin-bottom: 40px !important;
-    color: #333 !important;
+    font-family: 'Montserrat' !important;
+        font-size: 45px !important;
+        font-weight: 700 !important;
+        line-height: 55px !important;
+        text-align: left !important;
+        padding-left: 15px !important;
+        margin-bottom: 30px !important;
 }
 
 .pranaMainHeader span {
@@ -94,7 +94,7 @@
 }
 
 .pranaLogoText {
-    font-family: "Arial Black", sans-serif !important;
+    font-family: 'Montserrat' !important;
     font-size: 24px !important;
     font-weight: 900 !important;
     letter-spacing: 3px !important;

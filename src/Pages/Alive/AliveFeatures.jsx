@@ -3,11 +3,11 @@ import classes from "./AliveCss/AliveFeatures.module.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 // Import assets
-import speedometer from "../../Assets/Images/Alive/caserol/i1.JPG";
-import wheel from "../../Assets/Images/Alive/caserol/i3.JPG";
-import handbar from "../../Assets/Images/Alive/caserol/i4.JPG";
-import highlights4 from "../../Assets/Images/Alive/caserol/i6.JPG";
-import highlights5 from "../../Assets/Images/Alive/caserol/i2.JPG";
+import speedometer from "../../Assets/Images/Alive/caserol/caserol webp/i1.webp";
+import wheel from "../../Assets/Images/Alive/caserol/caserol webp/i3.webp";
+import handbar from "../../Assets/Images/Alive/caserol/caserol webp/i4.webp";
+import highlights4 from "../../Assets/Images/Alive/caserol/caserol webp/i6.webp";
+import highlights5 from "../../Assets/Images/Alive/caserol/caserol webp/i2.webp";
 
 const AliveFeatures = () => {
   const [currentFeature, setCurrentFeature] = useState(0);
