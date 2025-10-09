@@ -26,7 +26,7 @@ const AliveSection2 = () => {
       titleImage: liteTitleImage,
       image: liteImage,
       battery_capacity: "1.45",
-      certified_range: "80",
+      certified_range: "60",
       topSpeed: "50",
       price: 79000.0,
     },
@@ -36,7 +36,7 @@ const AliveSection2 = () => {
       titleImage: plusTitleImage,
       image: plusImage,
       battery_capacity: "2.7",
-      certified_range: "135",
+      certified_range: "110",
       topSpeed: "70",
       price: 105000.0,
     },
@@ -46,7 +46,7 @@ const AliveSection2 = () => {
       titleImage: eliteTitleImage,
       image: eliteImage,
       battery_capacity: "3.5",
-      certified_range: "155",
+      certified_range: "170",
       topSpeed: "85",
       price: 142000.0,
     },
@@ -100,8 +100,13 @@ const AliveSection2 = () => {
               <div>
                 <Typography className="Section2BtnPrice">Ex -Showroom</Typography>
                 <Typography className="Section2BtnPrice">
-                  ₹ {item.price.toLocaleString("en-IN")}
-                </Typography>
+  ₹ {item.price.toLocaleString("en-IN")}
+  {item.title === "Elite" && (
+    <span className="priceSubLabel"> (onwards)</span>
+  )}
+</Typography>
+
+
               </div>
               <Button
                 className="Section2Btn"

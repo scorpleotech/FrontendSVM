@@ -1,5 +1,11 @@
 /* aliveSection2.css - Using exact Prana styling */
-
+.priceSubLabel {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #666;
+    /* soft gray */
+    margin-left: 4px;
+}
 .Section2MainHeader {
     font-family: 'Montserrat' !important;
     font-size: 45px !important;
