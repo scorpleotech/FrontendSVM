@@ -138,8 +138,9 @@ const PranaSection2 = () => {
               <div className={styles.priceSection}>
                 <Typography className={styles.priceLabel}>Ex-Showroom</Typography>
                 <Typography className={styles.priceValue}>
-                  ₹ {pranaData.price.toLocaleString("en-IN")}
-                </Typography>
+                  ₹ {pranaData.price.toLocaleString("en-IN")}{" "}
+                  <span className={styles.priceSubLabel}>(onwards)</span>
+              </Typography>
               </div>
 
               <Button

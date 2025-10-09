@@ -1,5 +1,11 @@
 /* PranaSection2.module.css - CSS Module Implementation */
-
+.priceSubLabel {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #666;
+    /* light gray or muted tone */
+    margin-left: 4px;
+}
 .pranaMainContainer {
     background-color: #f8fbff;
     padding: 5% 0;
@@ -422,6 +428,7 @@
     outline: 2px solid #0a0b0a;
     outline-offset: 2px;
 }
+
 
 /* Print Styles */
 @media print {
