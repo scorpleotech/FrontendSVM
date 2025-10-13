@@ -43,6 +43,13 @@ import {
   getNewStateList,
 } from "../../Redux/Actions/otherActions";
 
+// Import static images
+import BikeImage1 from "../../Assets/Images/Elite Choose Color Vehicle Blue.png";
+import BikeImage2 from "../../Assets/Images/Grand Choose Color Vehicle Black.png";
+
+// Static images array
+const STATIC_IMAGES = [BikeImage1, BikeImage2];
+
 const Section2 = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -149,10 +156,7 @@ const Section2 = () => {
         model: selectedType[0],
       };
       console.log(userEntry);
-      // dispatch(pageLoader(true));
       dispatch(submitTestDrive(setErrorAlert, setSuccessMessage, userEntry));
-      // setSuccessMessage(true);
-      // handleResetState();
     }
   };
 
@@ -168,44 +172,7 @@ const Section2 = () => {
     dispatch(pageLoader(false));
   }, []);
 
-  // useEffect(() => {
-  //   if (storeList && storeList?.length > 0) {
-  //     if (stateList.length === 0) {
-  //       const stateArray = storeList.map((item) => {
-  //         return item.state;
-  //       });
-  //       console.log(stateArray);
-  //       const resultStateArray = stateArray.filter((value, index, self) => {
-  //         return (
-  //           value !== undefined && value !== "" && self.indexOf(value) === index
-  //         );
-  //       });
-  //       console.log(resultStateArray);
-  //       setStateList(resultStateArray);
-  //     }
-  //     if (selectedState !== "select") {
-  //       console.log(selectedState);
-  //       const cityArray = storeList.map((item) => {
-  //         if (item.state.toLowerCase() === selectedState.toLowerCase()) {
-  //           return item.city;
-  //         }
-  //       });
-  //       console.log(cityArray);
-  //       const resultCityArray = cityArray.filter((value, index, self) => {
-  //         return (
-  //           value !== undefined && value !== "" && self.indexOf(value) === index
-  //         );
-  //       });
-  //       console.log(resultCityArray);
-  //       setCityList(resultCityArray);
-  //     }
-  //     if (selectedState !== "select" && city !== "select") {
-  //     }
-  //   }
-  // }, [storeList, selectedState]);
-
   const handleChangeTime = (newValue) => {
-    // console.log(newValue);
     setTimeError(false);
     setTime(newValue);
   };
@@ -217,13 +184,17 @@ const Section2 = () => {
   const renderCategoryCard = () => {
     if (DemoPageImageArray.length > 0) {
       const ImageBanners = categoryList.map((item, index) => {
+        // Use static images cyclically
+        const staticImageSrc = STATIC_IMAGES[index % STATIC_IMAGES.length];
+        
         return (
           <Card
             className={classes.section2ImageCard}
             onClick={() => handleChangeCheckbox(item._id)}
+            key={item._id}
           >
             <img
-              src={`${process.env.REACT_APP_IMAGE_URL}${item?.image}`}
+              src={staticImageSrc}
               alt="elite electric bike demo ride"
               className={classes.section2CardBike}
             />
@@ -244,15 +215,6 @@ const Section2 = () => {
                 </Button>
               </div>
             </div>
-            {/* <Checkbox
-              icon={<CircleChecked />}
-              checkedIcon={<CircleCheckedFilled />}
-              checked={acceptTearms}
-              className={`${classes.AcceptTermCheckbox} ${
-                acceptTearms && classes.checkedAccept
-              }`}
-              onChange={() => setAcceptTearms(!acceptTearms)}
-            /> */}
             <Checkbox
               icon={<CircleChecked />}
               checkedIcon={<CircleCheckedFilled />}
@@ -327,18 +289,11 @@ const Section2 = () => {
         );
         setNewStoreList(new_filtered_stores);
       }
-
-      // setNewStoreList ,
     }
   }, [city]);
 
   return (
     <div className={classes.section2MainContainer}>
-      {/* <Typography
-        className={`${classes.DemoFloatingText1} ${classes.DemoFloatingText2}`}
-      >
-        DRIVE
-      </Typography> */}
       <Typography className={classes.section2HeaderText}>
         Select Model
       </Typography>
@@ -348,9 +303,6 @@ const Section2 = () => {
         className={classes.formInputContainer}
       >
         <LocalizationProvider dateAdapter={AdapterDayjs}>
-          {/* <div className={classes.ImageCardContainer}>
-            
-          </div> */}
           <div className={classes.ImageSliderCardContainer}>
             <CategorySlider
               renderFunction={renderCategoryCard}
@@ -358,33 +310,6 @@ const Section2 = () => {
             />
           </div>
           <Row className={classes.Section2formRow1}>
-            {/* <Col md={4} className={classes.InputContainer}>
-              <Typography className={`mb-2 ${classes.Section2formLable}`}>
-                Pincode
-              </Typography>
-              <TextValidator
-                sx={{
-                  "& legend": { display: "none" },
-                  "& fieldset": { top: 0 },
-                }}
-                id="pincodeInput"
-                placeholder=""
-                className={classes.TextInput}
-                value={pincode}
-                onChange={(e) => {
-                  setPincode(e.target.value);
-                }}
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <DemoLocationIcon2 />
-                    </InputAdornment>
-                  ),
-                }}
-                validators={["required"]} // Add this line
-                errorMessages={["Pincode is required"]}
-              />
-            </Col> */}
             <Col md={6} className={classes.InputContainer}>
               <Typography className={`mb-2 ${classes.Section2formLable}`}>
                 Date
@@ -428,7 +353,6 @@ const Section2 = () => {
                 onChange={handleChangeTime}
                 required
                 error={timeError}
-                // helperText={timeError ? "Time is Required" : ""}
               />
             </Col>
           </Row>
@@ -452,7 +376,7 @@ const Section2 = () => {
                 onKeyPress={(e) => {
                   Alphabetic(e);
                 }}
-                validators={["required"]} // Add this line
+                validators={["required"]}
                 errorMessages={["Name is required"]}
               />
             </Col>
@@ -472,7 +396,7 @@ const Section2 = () => {
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
-                validators={["required", "isEmail"]} // Add this line
+                validators={["required", "isEmail"]}
                 errorMessages={["Mail is required", "Enter a valid Email"]}
               />
             </Col>
@@ -496,7 +420,7 @@ const Section2 = () => {
                 onKeyPress={(e) => {
                   Numeric(e);
                 }}
-                validators={["required", "matchRegexp:[0-9]{10}"]} // Add this line
+                validators={["required", "matchRegexp:[0-9]{10}"]}
                 errorMessages={[
                   "Mobile Number is required",
                   "Enter a valid Mobile number",
@@ -507,73 +431,13 @@ const Section2 = () => {
               <Typography className={`mb-2 ${classes.Section2formLable}`}>
                 State
               </Typography>
-              {/* {allStates && allStates.length > 0 && (
-                <TextField
-                  fullWidth
-                  value={selectedState}
-                  sx={{
-                    "& legend": {
-                      display: "none",
-                    },
-                    "& fieldset": {
-                      top: 0,
-                    },
-                    textAlign: "left",
-                    whiteSpace: "normal", // Add this line to ensure normal white space
-                  }}
-                  select
-                  onChange={handleChangeState}
-                  className={
-                    selectedState === "select"
-                      ? `${classes.TextInput1} ${classes.defaultMenuItem}`
-                      : classes.TextInput1
-                  }
-                  // renderValue={(selected) => {
-                  //   return (
-                  //     selected?.charAt(0).toUpperCase() +
-                  //     selected?.slice(1).toLowerCase().replaceAll("_", " ")
-                  //   );
-                  // }}
-                  displayEmpty
-                  InputLabelProps={{
-                    shrink: false,
-                  }}
-                  error={stateError}
-                  helperText={stateError ? "Please Select State" : null}
-                >
-                  <MenuItem disabled value="select" style={{ display: "none" }}>
-                    <em>{""}</em>
-                  </MenuItem>
-                  {allStates.map((name) => (
-                    <MenuItem
-                      key={name}
-                      value={name}
-                      style={{ whiteSpace: "normal" }}
-                      className="all-listing"
-                    >
-                      <ListItemText
-                        // primary={
-                        //   name?.charAt(0).toUpperCase() +
-                        //   name?.slice(1).toLowerCase().replaceAll("_", " ")
-                        // }
-                        primary={name}
-                        className={classes.ListItemText}
-                      />
-                    </MenuItem>
-                  ))}
-                </TextField>
-              )} */}
               <Autocomplete
                 id="free-solo-demo"
-                // freeSolo
                 value={selectedState}
                 onChange={(e, val) => handleChangeState(e, val)}
                 options={allStates.map((option) => option)}
                 renderInput={(params) => (
                   <TextField
-                    // label="City"
-                    // placeholder="Select City"
-                    // className="autocomplete-book-demo"
                     className={`${classes.NrmlTextInput} autocomplete-book-demo`}
                     {...params}
                     error={cityError}
@@ -581,26 +445,6 @@ const Section2 = () => {
                   />
                 )}
               />
-              {/* <Select
-                fullWidth
-                value={selectedState}
-                sx={{
-                  "& legend": {
-                    display: "none",
-                  },
-                  "& fieldset": {
-                    top: 0,
-                  },
-                  textAlign: "left",
-                  whiteSpace: "normal", // Add this line to ensure normal white space
-                }}
-                select
-                onChange={handleChangeState}
-              >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
-              </Select> */}
             </Col>
             <Col md={6} className={classes.InputContainer}>
               <Typography className={`mb-2 ${classes.Section2formLable}`}>
@@ -608,15 +452,11 @@ const Section2 = () => {
               </Typography>
               <Autocomplete
                 id="free-solo-demo"
-                // freeSolo
                 value={city}
                 onChange={(e, val) => handleCityChange(e, val)}
                 options={allCity.map((option) => option.city)}
                 renderInput={(params) => (
                   <TextField
-                    // label="City"
-                    // placeholder="Select City"
-                    // className="autocomplete-book-demo"
                     className={`${classes.NrmlTextInput} autocomplete-book-demo`}
                     {...params}
                     error={cityError}
@@ -624,58 +464,6 @@ const Section2 = () => {
                   />
                 )}
               />
-              {/* <TextField
-                fullWidth
-                value={city}
-                sx={{
-                  "& legend": {
-                    display: "none",
-                  },
-                  "& fieldset": {
-                    top: 0,
-                  },
-                  textAlign: "left",
-                }}
-                select
-                size="small"
-                onChange={handleCityChange}
-                // input={<OutlinedInput label="Tag" />}
-                className={
-                  city === "select"
-                    ? `${classes.TextInput1} ${classes.defaultMenuItem}`
-                    : classes.TextInput1
-                }
-                renderValue={(selected) => {
-                  return (
-                    selected?.charAt(0).toUpperCase() +
-                    selected?.slice(1).toLowerCase().replaceAll("_", " ")
-                  );
-                }}
-                displayEmpty // Add displayEmpty property
-                InputLabelProps={{
-                  shrink: false, // Add shrink property
-                }}
-                error={cityError}
-                helperText={cityError ? "Please Select City" : null}
-              >
-                <MenuItem disabled value="select" style={{ display: "none" }}>
-                  <em>{""}</em>
-                </MenuItem>
-
-                {cityList &&
-                  cityList.length > 0 &&
-                  cityList.map((name) => (
-                    <MenuItem key={name} value={name}>
-                      <ListItemText
-                        primary={
-                          name?.charAt(0).toUpperCase() +
-                          name?.slice(1).toLowerCase().replaceAll("_", " ")
-                        }
-                        className={classes.ListItemText}
-                      />
-                    </MenuItem>
-                  ))}
-              </TextField> */}
             </Col>
             <Col md={6} className={classes.InputContainer}>
               <Typography className={`mb-2 ${classes.Section2formLable}`}>
@@ -696,21 +484,14 @@ const Section2 = () => {
                 select
                 size="small"
                 onChange={handleDealerHubChange}
-                // input={<OutlinedInput label="Tag" />}
                 className={
                   city === "select"
                     ? `${classes.TextInput1} ${classes.defaultMenuItem}`
                     : classes.TextInput1
                 }
-                // renderValue={(selected) => {
-                //   return (
-                //     selected?.charAt(0)?.toUpperCase() +
-                //     selected?.slice(1)?.toLowerCase().replaceAll("_", " ")
-                //   );
-                // }}
-                displayEmpty // Add displayEmpty property
+                displayEmpty
                 InputLabelProps={{
-                  shrink: false, // Add shrink property
+                  shrink: false,
                 }}
                 error={dealerHubError}
                 helperText={dealerHubError ? "Please Select Dealers Hub" : null}
@@ -721,13 +502,6 @@ const Section2 = () => {
 
                 {newStoreList &&
                   newStoreList.length > 0 &&
-                  // storeList
-                  // .filter(
-                  //   (item) =>
-                  //     item.state?.toLowerCase() ===
-                  //       selectedState?.toLowerCase() &&
-                  //     item.city?.toLowerCase() === city?.toLowerCase()
-                  // )
                   newStoreList.map((item, index) => (
                     <MenuItem key={index} value={item._id}>
                       <ListItemText
@@ -746,7 +520,6 @@ const Section2 = () => {
                   icon={<CircleChecked />}
                   checkedIcon={<CircleCheckedFilled />}
                   checked={acceptTearms}
-                  // disabled
                   className={`${classes.AcceptTermCheckbox} ${
                     acceptTearms && classes.checkedAccept
                   }`}
