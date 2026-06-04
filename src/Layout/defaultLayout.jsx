@@ -117,7 +117,7 @@ const DefaultLayout = () => {
         /> */}
           <div className={classes.WaveContainer}>
             <SocialIcon
-              href="https://wa.me/+918098402030" // Replace 'yourphonenumber' with your phone number including country code
+              href="https://wa.me/+919403893060" // Replace 'yourphonenumber' with your phone number including country code
               url="https://web.whatsapp.com/" // This will not be used, but you can keep it if you want
               target="_blank"
               className={classes.WhatsAppBtn}

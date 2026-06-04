@@ -173,6 +173,13 @@ body {
   text-align: left;
 }
 
+.oldPrice {
+  margin-left: 8px;
+  color: #808080;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
 .sectionBtnContainer {
   display: flex;
   margin-top: 20px !important;

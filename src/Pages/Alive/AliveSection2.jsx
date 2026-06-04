@@ -48,7 +48,7 @@ const AliveSection2 = () => {
       battery_capacity: "3.5",
       certified_range: "170",
       topSpeed: "85",
-      price: 142000.0,
+      price: 152000.0,
     },
   ];
 
@@ -101,9 +101,7 @@ const AliveSection2 = () => {
                 <Typography className="Section2BtnPrice">Ex -Showroom</Typography>
                 <Typography className="Section2BtnPrice">
   ₹ {item.price.toLocaleString("en-IN")}
-  {item.title === "Elite" && (
-    <span className="priceSubLabel"> (onwards)</span>
-  )}
+  <span className="priceSubLabel"> (onwards)</span>
 </Typography>
 
 

@@ -15,7 +15,6 @@ const createColorObject = (name, hex, image) => ({ name, hex, image });
 const DEFAULT_BIKE_MODELS = {
   Black: {
     name: 'PRANA Black',
-    price: 999,
     logoImage: pranaLogo,
     availableColors: [
       createColorObject('Black', '#000000', pranaBlack),
@@ -23,7 +22,6 @@ const DEFAULT_BIKE_MODELS = {
   },
   Blue: {
     name: 'PRANA Blue',
-    price: 999,
     logoImage: pranaLogo,
     availableColors: [
       createColorObject('Blue', '#1E90FF', pranaBlue),
@@ -69,6 +67,8 @@ function PranaReservationPopup({ isOpen = false, onClose = () => {} }) {
   const [alertInfo, setAlertInfo] = useState({ isVisible: false, message: '' });
   const [formData, setFormData] = useState({ name: '', email: '', mobile: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [bookingAmount, setBookingAmount] = useState("1000");
+  const [amountError, setAmountError] = useState("");
 
   const models = DEFAULT_BIKE_MODELS;
   const currentBike = models[currentSelectedModel];
@@ -128,6 +128,11 @@ function PranaReservationPopup({ isOpen = false, onClose = () => {} }) {
       showAlert('Please agree to Terms & Conditions and Privacy Policy');
       return;
     }
+    const digits = bookingAmount.replace(/\D/g, "").length;
+    if (!bookingAmount || digits < 4 || digits > 10) {
+      showAlert('Booking amount must be between 4 and 10 digits');
+      return;
+    }
 
     setIsSubmitting(true);
 
@@ -139,7 +144,7 @@ function PranaReservationPopup({ isOpen = false, onClose = () => {} }) {
         mobile: formData.mobile.trim(),
         color: selectedColor,
         colorName: selectedColorObj.name,
-        price: currentBike.price,
+        price: Number(bookingAmount),
         proceedToPayment: true
       };
 
@@ -260,9 +265,25 @@ function PranaReservationPopup({ isOpen = false, onClose = () => {} }) {
             </p>
             <div className={styles.priceSection}>
               <div className={styles.priceMain}>
-                INR {currentBike.price}.00
-                <span className={styles.priceNote}>(Advance Booking)</span>
+                <span className={styles.priceNote}>Booking Amount (INR)</span>
               </div>
+              <input
+                type="text"
+                inputMode="numeric"
+                className={styles.formInput}
+                value={bookingAmount}
+                onChange={(e) => {
+                  const raw = e.target.value.replace(/\D/g, "");
+                  setBookingAmount(raw);
+                  const digits = raw.length;
+                  if (!raw) setAmountError("Please enter an amount");
+                  else if (digits < 4) setAmountError("Minimum 4 digits required");
+                  else if (digits > 10) setAmountError("Maximum 10 digits allowed");
+                  else setAmountError("");
+                }}
+                placeholder="Enter booking amount"
+              />
+              {amountError && <span style={{ color: "red", fontSize: "12px", marginTop: "4px", display: "block" }}>{amountError}</span>}
             </div>
             <button 
               className={styles.payBtn} 

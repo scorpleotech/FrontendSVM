@@ -80,7 +80,8 @@ const Section1 = () => {
             <div className={classes.CardTextContainer}>
               <Typography className={classes.CardText}>
                 +91 80 98 20 20 30 / <br />
-                +91 63 74 99 92 16
+                +91 63 74 99 92 16 / <br />
+                +91 94 03 89 30 60
               </Typography>
             </div>
           </Card>

@@ -100,7 +100,7 @@ const Section7 = () => {
                   return (
                     <TableCell className={classes.section7column2} key={index}>
                       <Typography className={classes.section7CellText}>
-                        <span>₹{item.price.toLocaleString("en-IN")}</span>
+                        <span>₹{(item.title === "Elite" ? 376000 : item.title === "Grand" ? 276000 : item.price).toLocaleString("en-IN")}</span>
                         {/* <br />
                         <span>{getDollarAmount(item.price)}</span> */}
                         {/* <br />

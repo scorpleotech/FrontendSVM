@@ -12,7 +12,6 @@ import { CategorySliderResponsive } from "../../Utils/dummyConstants";
 import { FaArrowRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-
 import PranaElite from "../../Assets/Images/Elite Choose Color Vehicle Blue.png";
 import PranaGrand from "../../Assets/Images/Grand Choose Color Vehicle Black.png";
 
@@ -26,7 +25,6 @@ const Section2 = () => {
   );
 
   const renderCategoryCard = () => {
-    
     const staticCards = [
       {
         title: "Prana Elite",
@@ -34,7 +32,7 @@ const Section2 = () => {
         battery_capacity: "8.44",
         certified_range: "250",
         topSpeed: "123",
-        price: 320250,
+        price: 376000,
       },
       {
         title: "Prana Grand",
@@ -42,9 +40,8 @@ const Section2 = () => {
         battery_capacity: "5.0",
         certified_range: "150",
         topSpeed: "123",
-        price: 255150,
+        price: 276000,
       },
-      
     ];
 
     return staticCards.map((item, index) => (

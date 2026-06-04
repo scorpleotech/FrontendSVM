@@ -24,21 +24,18 @@ const createColorObject = (name, hex, image) => ({ name, hex, image });
 const DEFAULT_BIKE_MODELS = {
   Lite: {
     name: 'ALIVE Lite',
-    price: 999,
     image: liteDefaultImage,
     logoImage: liteLogo,
     availableColors: [createColorObject('Grey', '#595757ff', liteBlackImage)]
   },
   Plus: {
     name: 'ALIVE Plus',
-    price: 999,
     image: plusDefaultImage,
     logoImage: plusLogo,
     availableColors: [createColorObject('White', '#FFFFFF', plusWhiteImage)]
   },
   Elite: {
     name: 'ALIVE Elite',
-    price: 999,
     image: eliteDefaultImage,
     logoImage: eliteLogo,
     availableColors: [
@@ -107,6 +104,8 @@ function AliveReservationPopup({ isOpen = false, onClose = () => {}, selectedMod
   const [agreedToTerms, setAgreedToTerms] = useState(false);
   const [alertInfo, setAlertInfo] = useState({ isVisible: false, message: '' });
   const [formData, setFormData] = useState({ name: '', email: '', mobile: '' });
+  const [bookingAmount, setBookingAmount] = useState("1000");
+  const [amountError, setAmountError] = useState("");
 
   const models = Object.keys(bikeModels).length > 0 ? bikeModels : DEFAULT_BIKE_MODELS;
   const currentBike = models[currentSelectedModel] || models['Plus'];
@@ -152,6 +151,8 @@ function AliveReservationPopup({ isOpen = false, onClose = () => {}, selectedMod
     if (!/^[0-9]{10}$/.test(formData.mobile.trim())) return showAlert('Mobile number must be exactly 10 digits');
     if (!selectedColor) return showAlert('Please select a color');
     if (!agreedToTerms) return showAlert('Please agree to Terms & Privacy Policy');
+    const digits = bookingAmount.replace(/\D/g, "").length;
+    if (!bookingAmount || digits < 4 || digits > 10) return showAlert('Booking amount must be between 4 and 10 digits');
 
     setLoading(true);
     const reservationData = {
@@ -159,7 +160,7 @@ function AliveReservationPopup({ isOpen = false, onClose = () => {}, selectedMod
       model: currentSelectedModel,
       color: selectedColor,
       colorName: selectedColorObj?.name || selectedColor,
-      price: currentBike.price,
+      price: Number(bookingAmount),
       proceedToPayment: true,
       created_user: { id: 'web-user', name: formData.name }
     };
@@ -221,7 +222,27 @@ function AliveReservationPopup({ isOpen = false, onClose = () => {}, selectedMod
               const value = e.target.value.replace(/[^0-9]/g, '').slice(0, 10);
               setFormData({ ...formData, mobile: value });
             }} disabled={loading} maxLength="10" /><p className="input-help">We'll share booking updates via SMS & WhatsApp</p></div>
-            <div className="price-section"><div className="price-main">INR {currentBike.price}.00 <span className="price-note">(Advance)</span></div></div>
+            <div className="price-section">
+              <div className="price-main"><span className="price-note">Booking Amount (INR)</span></div>
+              <input
+                type="text"
+                inputMode="numeric"
+                className="form-input"
+                value={bookingAmount}
+                onChange={(e) => {
+                  const raw = e.target.value.replace(/\D/g, "");
+                  setBookingAmount(raw);
+                  const digits = raw.length;
+                  if (!raw) setAmountError("Please enter an amount");
+                  else if (digits < 4) setAmountError("Minimum 4 digits required");
+                  else if (digits > 10) setAmountError("Maximum 10 digits allowed");
+                  else setAmountError("");
+                }}
+                placeholder="Enter booking amount"
+                disabled={loading}
+              />
+              {amountError && <span style={{ color: "red", fontSize: "12px", marginTop: "4px", display: "block" }}>{amountError}</span>}
+            </div>
             <button className={`pay-btn ${loading ? 'disabled' : ''}`} onClick={handleSubmit} disabled={loading}>{loading ? 'PROCESSING...' : 'PAY NOW'}</button>
             <div className="terms-container">
               <input type="checkbox" id="agree-terms" checked={agreedToTerms} onChange={(e) => setAgreedToTerms(e.target.checked)} className="terms-checkbox" disabled={loading} />

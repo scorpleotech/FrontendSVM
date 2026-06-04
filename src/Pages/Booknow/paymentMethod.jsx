@@ -21,9 +21,12 @@ const PaymentMethod = ({ SelectedVartiant }) => {
   const [selectedItem, setSelectedItem] = useState();
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [errorAlert, setErrorAlert] = useState(false);
-  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("");
+  const initialBookingOption = { title: "Initial Booking Amount", disabled: false };
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(initialBookingOption);
   const [defaultError, setDefaultError] = useState("");
   const [isClicked, setIsClicked] = useState(false);
+  const [bookingAmount, setBookingAmount] = useState("1000");
+  const [amountError, setAmountError] = useState("");
   const { success, storeList, categoryList } = useSelector(
     (state) => state.demoDriveDatas
   );
@@ -39,28 +42,7 @@ const PaymentMethod = ({ SelectedVartiant }) => {
     setSelectedColor(bikeVariants[0]?._id);
   }, [bikeVariants]);
 
-  const dummyData = [
-    {
-      title: "Initial Booking Amount",
-      price: 999,
-      disabled: false,
-    },
-    {
-      title: "Priority Booking Amount",
-      price: "Available Soon!",
-      disabled: true,
-    },
-    {
-      title: "Full Payment",
-      price: "Available Soon!",
-      disabled: true,
-    },
-    // {
-    //   title: "No Cost Booking",
-    //   price: "",
-    //   disabled: false,
-    // },
-  ];
+  const dummyData = [initialBookingOption];
 
   const handleSelectedIndex = (index) => {
     if (index !== 0) {
@@ -71,6 +53,15 @@ const PaymentMethod = ({ SelectedVartiant }) => {
 
   const handleSubmit = () => {
     if (selectedPaymentMethod) {
+      if (selectedPaymentMethod.title === "Initial Booking Amount") {
+        const val = Number(bookingAmount);
+        const digits = bookingAmount.replace(/\D/g, "").length;
+        if (!bookingAmount || isNaN(val) || digits < 4 || digits > 10) {
+          setDefaultError("Booking amount must be between 4 and 10 digits");
+          setErrorAlert(true);
+          return;
+        }
+      }
       setIsClicked(true);
       setTimeout(() => {
         handleSubmitForm();
@@ -85,7 +76,7 @@ const PaymentMethod = ({ SelectedVartiant }) => {
   console.log("selectedPaymentMethod =", selectedPaymentMethod);
   const handleSubmitForm = () => {
     if (selectedPaymentMethod?.title === "Initial Booking Amount") {
-      userdata.amount = 999;
+      userdata.amount = Number(bookingAmount);
     } else {
       userdata.amount = 0;
     }
@@ -178,7 +169,9 @@ const PaymentMethod = ({ SelectedVartiant }) => {
                 <Typography>Booking Amount</Typography>
                 <Typography>
                   ₹{" "}
-                  {selectedPaymentMethod?.price
+                  {selectedPaymentMethod?.title === "Initial Booking Amount"
+                    ? (Number(bookingAmount) || 0).toLocaleString("en-IN")
+                    : selectedPaymentMethod?.price
                     ? selectedPaymentMethod?.price
                     : 0}
                 </Typography>
@@ -195,15 +188,48 @@ const PaymentMethod = ({ SelectedVartiant }) => {
                         onChange={() => setSelectedPaymentMethod(item)}
                         type="radio"
                         disabled={item.disabled}
+                        defaultChecked={item.title === "Initial Booking Amount"}
                         id={`inline-${index}`}
                       />
-                      <Typography
-                        className={`${classes.paymentRadioPrice} ${
-                          item.disabled && classes.disablesText
-                        }`}
-                      >
-                        {item.price}
-                      </Typography>
+                      {item.title === "Initial Booking Amount" ? (
+                        <div style={{ display: "flex", flexDirection: "column" }}>
+                          <Form.Control
+                            type="text"
+                            inputMode="numeric"
+                            value={bookingAmount}
+                            onChange={(e) => {
+                              const raw = e.target.value.replace(/\D/g, "");
+                              setBookingAmount(raw);
+                              const val = Number(raw);
+                              if (raw === "" || isNaN(val)) {
+                                setAmountError("Please enter a valid amount");
+                              } else if (raw.replace(/\D/g, "").length < 4) {
+                                setAmountError("Minimum 4 digits required");
+                              } else if (raw.replace(/\D/g, "").length > 10) {
+                                setAmountError("Maximum 10 digits allowed");
+                              } else {
+                                setAmountError("");
+                              }
+                            }}
+                            disabled={selectedPaymentMethod?.title !== "Initial Booking Amount"}
+                            style={{ width: "130px", fontSize: "13px", padding: "4px 8px" }}
+                            placeholder="Enter amount"
+                          />
+                          {amountError && selectedPaymentMethod?.title === "Initial Booking Amount" && (
+                            <span style={{ color: "red", fontSize: "11px", marginTop: "3px", maxWidth: "130px" }}>
+                              {amountError}
+                            </span>
+                          )}
+                        </div>
+                      ) : (
+                        <Typography
+                          className={`${classes.paymentRadioPrice} ${
+                            item.disabled && classes.disablesText
+                          }`}
+                        >
+                          {item.price}
+                        </Typography>
+                      )}
                     </div>
                   );
                 })}

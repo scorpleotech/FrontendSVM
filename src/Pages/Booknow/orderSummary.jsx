@@ -130,12 +130,17 @@ const OrderSummary = () => {
   };
 
   const handleSubmit = () => {
-    const userEntry = {
-      phone: orderDetails?.customerDetails.phone,
-    };
     dispatch(pageLoader(true));
-    dispatch(getOtp(setErrorAlert, userEntry, setOtpModalToggle));
-    dispatch(pageLoader(false));
+    if (orderDetails?.order?.booking_amount === 0) {
+      const userEntry = {
+        phone: orderDetails?.customerDetails.phone,
+      };
+      dispatch(getOtp(setErrorAlert, userEntry, setOtpModalToggle));
+      dispatch(pageLoader(false));
+      return;
+    }
+
+    dispatch(makePaymentApi(setErrorAlert, orderDetails?.order?._id));
   };
 
   const modalClose = () => {

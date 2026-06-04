@@ -39,7 +39,7 @@ const PranaSection2 = () => {
     battery_capacity: "3.5",
     certified_range: "170",
     topSpeed: "85",
-    price: 152000.0,
+    price: 162000.0,
   };
 
   const handlePreBookClick = () => {
